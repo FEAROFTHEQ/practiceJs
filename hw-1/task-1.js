@@ -1,5 +1,7 @@
-export default function makeTransaction(quantity, pricePerDroid) {
-  return `You ordered ${quantity} droids worth ${
-    quantity * pricePerDroid
-  } credits!`;
+export default function isEnoughCapacity(products, containerSize) {
+  let total = 0;
+  for (const productQuantity of Object.values(products)) {
+    total += productQuantity;
+  }
+  return total <= containerSize;
 }
