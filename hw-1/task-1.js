@@ -1,5 +1,3 @@
-export default function makeTransaction(quantity, pricePerDroid) {
-  return `You ordered ${quantity} droids worth ${
-    quantity * pricePerDroid
-  } credits!`;
+export default function slugify(title) {
+  return title.toLowerCase().split(" ").join("-");
 }
