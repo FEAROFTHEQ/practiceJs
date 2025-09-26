@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+.gallery{
+    list-style: none;
+    display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.gallery-item{
+   width: calc((100% - 40px) / 3);
+    height: 200px;
+    overflow: hidden;
+    border: 3px solid transparent;
+     object-fit: cover;
+
+}
+.gallery-item:hover{
+    border: 3px solid #20aefa;
+}
+.gallery-image{
+ max-width: 100%;
+}
