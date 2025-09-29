@@ -25,3 +25,37 @@ margin: 30px auto;
 .gallery-image{
  max-width: 100%;
 }
+
+.feedback-form{
+    display: flex;
+    flex-direction: column;
+ margin: 30px auto;
+ max-width: 400px;
+ gap: 20px;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+button{
+    max-width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(90, 117, 234);
+    color: white;
+}
+textarea{
+    resize: none;
+        border-radius: 5px;
+        border: #828d93 solid 1px;
+}
+input{
+    border-radius: 5px;
+            border: #828d93 solid 1px;
+}
+ textarea:hover, input:hover, textarea:focus,input:focus{
+    outline: none;
+    border: 1px solid rgb(102, 102, 254);
+}
