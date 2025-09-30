@@ -1,3 +1,5 @@
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 const form = document.querySelector(".form");
 const createPromis = (state, delay) => {
   return new Promise((res, rej) => {
@@ -16,5 +18,19 @@ form.addEventListener("submit", (e) => {
   const state = e.currentTarget.elements.state.value;
   const delay = Number(e.currentTarget.elements.delay.value);
 
-  createPromis(state, delay);
+  createPromis(state, delay)
+    .then((result) => {
+      iziToast.success({
+        title: "Success",
+        message: result,
+        position: "topCenter",
+      });
+    })
+    .catch((err) => {
+      iziToast.error({
+        title: "Error",
+        message: err,
+        position: "topCenter",
+      });
+    });
 });
