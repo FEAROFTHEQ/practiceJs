@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>hw-js-11</title>
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
@@ -15,6 +16,12 @@
     <button type="submit">Search</button>
   </form>
   <ul class='gallery'></ul>
+  <div class="loader hidden"></div>
+  <script>
+    if (typeof global === 'undefined') {
+      var global = window;
+    }
+  </script>
   <script type="module" src="/src/main.js"></script>
 </body>
 

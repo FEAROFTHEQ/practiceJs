@@ -6,21 +6,25 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
+  showGallery,
 } from "./js/render-function.js";
 
 const form = document.querySelector(".form");
+const gallery = document.querySelector(".gallery");
+const loader = document.querySelector(".loader");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log(e.target.elements.searchText.value);
   if (e.target.elements.searchText.value.trim() === "") {
     return;
   }
+  console.log(loader.classList);
+  loader.classList.remove("hidden");
   try {
+    clearGallery(gallery);
     const data = await getImagesByQuery(
       e.target.elements.searchText.value.trim()
     );
-    console.log(data.hits);
     if (data.hits.length === 0) {
       iziToast.warning({
         title: "Oopsie",
@@ -29,6 +33,10 @@ form.addEventListener("submit", async (e) => {
       });
       return;
     }
+    loader.classList.add("hidden");
+    const markup = createGallery(data.hits);
+    gallery.insertAdjacentHTML("afterbegin", markup);
+    showGallery();
   } catch (err) {
     console.log(err);
   }
